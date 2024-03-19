@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Oswald:wght@200..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    background-color: rgb(240, 238, 235);
+}
+
+
+.font-oswald{
+    font-family: "Oswald";
+}
+
+.font-mar{
+    font-family: 'Martel Sans';
+}
