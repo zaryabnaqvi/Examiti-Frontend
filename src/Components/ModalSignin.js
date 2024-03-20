@@ -60,11 +60,18 @@ export function DialogWithForm() {
                   <Typography className="font-medium text-gray-800">
                     {role.label}
                   </Typography>
-                
+                  <Typography
+                    variant="small"
+                    className="font-normal text-gray-700"
+                  >
+                    {role.description}
+                  </Typography>
                 </>
               }
               color="blue"
-              
+              containerProps={{
+                className: "-mt-4",
+              }}
             />
           </Card>
         ))}
@@ -79,24 +86,24 @@ export function DialogWithForm() {
                     Sign In
                 </Button>
       <Dialog
-        size="xs"
+        size="sm"
         open={open}
         handler={handleOpen}
-        className="bg-transparent shadow-none"
+        className="bg-transparent shadow-none h-[100%] overflow-y-auto scrollable-container rounded-lg pt-10 pb-10"
       >
-        <Card className="mx-auto w-full max-w-[24rem]">
+        <Card className="mx-auto w-full max-w-[24rem] ">
           <CardBody className="flex flex-col gap-4 justify-center">
             <Typography className="flex justify-center" variant="h4" color="blue-gray">
               <Logo/>
             </Typography>
             <RoleSelector  name="userRole" availableRoles={availableRoles}/>
-            {/* <Typography
+            <Typography
               className="mb-3 font-normal"
               variant="paragraph"
               color="gray"
             >
               Enter your email and password to Sign In.
-            </Typography> */}
+            </Typography>
             {/* <Typography className="-mb-2" variant="h6">
               Your Email
             </Typography> */}

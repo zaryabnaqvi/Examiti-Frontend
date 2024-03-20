@@ -13,10 +13,11 @@ import {
 import Logo from "../Components/Logo";
 import { DrawerWithNavigation } from "../Components/Drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faBook, faClipboard, faClipboardList, faMagic, faPerson, faQuestionCircle, faRightFromBracket, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBook, faClipboard, faClipboardList, faMagic, faPeopleGroup, faPerson, faQuestionCircle, faRightFromBracket, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { DefaultTable } from "../Components/Table";
 import Example from "../Components/LineChart";
 import Footer from "../Components/Footer";
+import DashboardNavbar from "../Components/DashboardNavbar";
 
 const Dashboard = () => {
   const d = new Date();
@@ -35,46 +36,11 @@ const Dashboard = () => {
     });
   }, [scrolled]);
 
+  
+
   return (
     <>
-      <Navbar
-        className="sticky top-0 z-50 px-4 py-2 border-b border-gray-300 text-gray-900"
-        shadow={scrolled}
-        fullWidth
-      >
-        <div className="flex items-center justify-between">
-          <div className="flex justify-center">
-            <Button
-              ripple={false}
-              variant="text"
-              className="active:bg-transparent hover:bg-transparent"
-              onClick={() => {
-                setOpen(!open);
-              }}
-            >
-              <FontAwesomeIcon className="text-base" icon={faBars} />
-            </Button>
-            <Logo />
-          </div>
-          <div>
-            <div className="flex justify-center items-center">
-              <Typography className="mr-4" variant="h6">Username</Typography>
-              <div>
-                <div className="self-center sm:self-end md:w-auto">
-                  <Button className="mr-0 md:mr-3 mt-3 lg:mt-0 ">
-
-                    Logout
-                    <FontAwesomeIcon className="ml-2" icon={faRightFromBracket} />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Navbar>
-
-      <DrawerWithNavigation open={open} setOpen={setOpen} />
-      <main onClick={() => setOpen(false)}>
+      <DashboardNavbar>
         {/* <div className=" flex flex-col lg:flex-row mt-10 w-4/5 mx-auto justify-between items-center">
           <Typography
             variant="h4"
@@ -121,39 +87,45 @@ const Dashboard = () => {
           <div className="flex justify-center w-full  gap-4 flex-wrap py-10 md:py-14 items-center content-center">
 
 
-            <div className="md:w-1/5 px-5 bg-red-400 text-[rgb(240,238,235)] tracking-tighter flex flex-wrap items-end justify-start md:h-40 rounded-3xl rounded-bl-none p-3">
+            <div className="md:w-1/5 px-5 bg-red-400 hover:bg-red-300 transition-all duration-150 text-[rgb(240,238,235)] cursor-pointer tracking-tighter flex flex-wrap items-end justify-start md:h-40 md:rounded-3xl rounded-full !rounded-bl-none p-3">
               <div className="w-full">
 
-                <FontAwesomeIcon icon={faPerson} className="text-[rgb(240,238,235)] md:text-6xl text-3xl md:mb-3" />
+                <FontAwesomeIcon icon={faPeopleGroup} className="text-[rgb(240,238,235)] md:text-6xl text-3xl md:mb-3 aspect-[1/1]" />
                 <br />
-                
+
                 <span className="hidden md:block">Manage Teachers</span>
               </div>
             </div>
-            <div className="md:w-1/5 px-5 bg-[#38bdf8] flex text-[rgb(240,238,235)] tracking-tighter flex-wrap items-end justify-start md:h-40 rounded-3xl rounded-bl-none p-3">
+
+
+            <div className="md:w-1/5 px-5 bg-[#38bdf8] hover:bg-[#7dd3fc] transition-all duration-150 flex text-[rgb(240,238,235)] cursor-pointer tracking-tighter flex-wrap items-end justify-start md:h-40 md:rounded-3xl rounded-full !rounded-bl-none p-3">
               <div className="w-full">
 
-                <FontAwesomeIcon icon={faBook} className="text-[rgb(240,238,235)] md:text-6xl text-3xl md:mb-3" />
+                <FontAwesomeIcon icon={faBook} className="text-[rgb(240,238,235)] md:text-6xl text-3xl md:mb-3 aspect-[1/1]" />
                 <br />
-               <span className="hidden md:block"> Manage Courses</span>
+                <span className="hidden md:block"> Manage Courses</span>
               </div>
             </div>
-            <div className="md:w-1/5 px-5  bg-[#8b5cf6] flex text-[rgb(240,238,235)] tracking-tighter flex-wrap items-end justify-start md:h-40 rounded-3xl rounded-bl-none p-3">
+
+            <div className="md:w-1/5 px-5  bg-[#8b5cf6] hover:bg-[#a78bfa] flex text-[rgb(240,238,235)] transition-all duration-150 cursor-pointer tracking-tighter flex-wrap items-end justify-start md:h-40 md:rounded-3xl rounded-full !rounded-bl-none p-3">
               <div className="w-full">
 
-                <FontAwesomeIcon className="text-[rgb(240,238,235)] md:text-6xl text-3xl md:mb-3" icon={faClipboardList} />
+                <FontAwesomeIcon className="text-[rgb(240,238,235)] md:text-6xl text-3xl md:mb-3 aspect-[1/1]" icon={faClipboardList} />
                 <br />
                 <span className="hidden md:block">Manage Templates</span>
               </div>
             </div>
-            <div className="md:w-1/5 px-5  bg-green-400 flex text-[rgb(240,238,235)] tracking-tighter flex-wrap items-end justify-start md:h-40 rounded-3xl rounded-bl-none p-3">
+
+            <div className="md:w-1/5 px-5  bg-green-400 hover:bg-green-300 transition-all duration-150 cursor-pointer flex text-[rgb(240,238,235)] tracking-tighter flex-wrap items-end justify-start md:h-40 md:rounded-3xl rounded-full !rounded-bl-none p-3">
               <div className="w-full">
 
-                <FontAwesomeIcon className="text-[rgb(240,238,235)] md:text-6xl text-3xl md:mb-3" icon={faQuestionCircle} />
+                <FontAwesomeIcon className="text-[rgb(240,238,235)] md:text-6xl text-3xl md:mb-3 aspect-[1/1]" icon={faQuestionCircle} />
                 <br />
                 <span className="hidden md:block">Manage Question Bank</span>
               </div>
             </div>
+
+
           </div>
         </div>
 
@@ -201,8 +173,8 @@ const Dashboard = () => {
             </Card>
           </div>
         </div>
-        <Footer />
-      </main>
+      </DashboardNavbar>
+
     </>
   );
 };
