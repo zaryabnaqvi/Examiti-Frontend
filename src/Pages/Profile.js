@@ -12,6 +12,7 @@ import Logo from "../Components/Logo";
 import { DrawerWithNavigation } from "../Components/Drawer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import DashboardNavbar from "../Components/DashboardNavbar";
 
 
 export default function Profile() {
@@ -38,43 +39,8 @@ export default function Profile() {
   return (
     <>
 
-<Navbar
-        className="sticky top-0 z-50 px-4 py-2 border-b border-gray-300 text-gray-900"
-        shadow={scrolled}
-        fullWidth
-      >
-        <div className="flex items-center justify-between">
-          <div className="flex justify-center">
-            <Button
-              ripple={false}
-              variant="text"
-              className="active:bg-transparent hover:bg-transparent"
-              onClick={() => {
-                setOpen(!open);
-              }}
-            >
-              <FontAwesomeIcon className="text-base" icon={faBars} />
-            </Button>
-            <Logo />
-          </div>
-          <div>
-            <div className="flex justify-center items-center">
-              <Typography className="mr-4" variant="h6">Username</Typography>
-              <div>
-                <div className="self-center sm:self-end md:w-auto">
-                  <Button className="mr-0 md:mr-3 mt-3 lg:mt-0 ">
-
-                    Logout
-                    <FontAwesomeIcon className="ml-2" icon={faRightFromBracket} />
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Navbar>
-      
-      <DrawerWithNavigation open={open} setOpen={setOpen} />
+<DashboardNavbar>
+  
     <form onSubmit={handleSubmit(onSubmit)} className="container mx-auto my-20">
       <div className="bg-white shadow my-5 sm:rounded-lg border-t border-gray-200">
         <div className="px-4 py-5  sm:px-6">
@@ -145,7 +111,8 @@ export default function Profile() {
         </div>
       </div>
     </form>
-<Footer/>
+
+    </DashboardNavbar>
     </>
   );
 }

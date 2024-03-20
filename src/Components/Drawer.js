@@ -43,7 +43,7 @@ export function DrawerWithNavigation({ open, setOpen }) {
             </ListItem>
           </Link>
           <hr className="w-full" />
-          <Link to="/predictions">
+          <Link to="/dashboard/teacher">
             <ListItem className="hover:!bg-transparent focus:!bg-transparent hover:translate-x-1">
               <ListItemPrefix>
               <FontAwesomeIcon icon={faPeopleGroup}/>
@@ -52,7 +52,7 @@ export function DrawerWithNavigation({ open, setOpen }) {
             </ListItem>
             
           </Link>
-          <Link to="/predictions">
+          <Link to="/admin/courses">
             <ListItem className="hover:!bg-transparent focus:!bg-transparent hover:translate-x-1">
               <ListItemPrefix>
               <FontAwesomeIcon icon={faBook}/>
