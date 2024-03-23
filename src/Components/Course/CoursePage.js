@@ -22,19 +22,19 @@ export default function CoursePage() {
                     </Typography>
 
                     {(viewForm) ? (
-                        <div onClick={() => { setViewForm(!viewForm) }} className='p-3 w-full text-black shadow-lg  bg-white rounded-2xl'>
+                        <div onClick={() => { setViewForm(!viewForm) }} className='p-5 w-full text-black shadow-lg  bg-white rounded-2xl'>
                             <div className='flex justify-between'>
                                 <div>
-                                    <Typography className='font-mar opacity-75 font-semibold'>
-                                        <span className='font-oswald font-semibold text-xl opacity-95'>  Course Name </span>: Computer Science
+                                    <Typography className='font-mar opacity-75 text-2xl mb-4 font-semibold'>
+                                        {/* <span className='font-oswald font-semibold opacity-95'>  Course Name </span>:*/} <strong> Computer Science</strong> 
                                     </Typography>
                                 </div>
                                 <div>
-                                    <FontAwesomeIcon className='text-2xl' icon={faPencilSquare} />
+                                    <FontAwesomeIcon className='text-3xl' icon={faPencilSquare} />
                                 </div>
                             </div>
-                            <Typography className='w-full font-mar opacity-75 font-semibold'>
-                                <span className='font-oswald font-semibold text-xl opacity-95'>  Descripiton </span> : Ginger, short hair slightly reveals a full,
+                            <Typography className='w-full font-mar text-xl opacity-70 font-semibold'>
+                                {/* <span className='font-oswald font-semibold text-xl opacity-95'>  Descripiton </span> :  */} Ginger, short hair slightly reveals a full,
                                 warm face. Piercing hazel eyes, set buried within their sockets, watch watchfully over the tribes they've shown
                                 mercy on for so long. A gunshot left a mark stretching from just under
                                 the left eye , first running towards thin lips and ending on his right
@@ -93,7 +93,7 @@ export default function CoursePage() {
                         variant="h4"
                         className="self-center sm:self-start font-mar mb-10 font-bold text-3xl text-[#323226d7] "
                     > Topics</Typography>
-                    <div  className='max-h-screen'>
+                    <div  className='max-h-screen mb-10'>
 
                         <SubjectsCard/>
                         <SubjectsCard/>

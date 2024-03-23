@@ -11,6 +11,8 @@ import Profile from "./Pages/Profile";
 import CourseManage from "./Pages/CourseManage";
 import CoursePage from "./Components/Course/CoursePage";
 import TeacherManage from "./Pages/TeacherManage";
+import Paper from "./Pages/Paper";
+import PaperMaking from "./Pages/PaperMaking";
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
         <Route path="/admin/courses" element={<CourseManage />} />
         <Route path="/admin/courses/:id" element={<CoursePage />} />
         <Route path="/dashboard/teacher" element={<TeacherManage />} />
+        <Route path="/paper" element={<PaperMaking/>}/>
 
 
 

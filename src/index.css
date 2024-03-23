@@ -22,3 +22,44 @@ body{
 .scrollable-container::-webkit-scrollbar {
     display: none;
 }
+
+/* TextEditor.css */
+
+/* Custom styles for the Quill editor to give it a "bubble" theme look */
+.ql-container {
+    border: none;
+    border-radius:0 0 20px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   }
+   
+   .ql-editor {
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+   }
+   
+   .ql-toolbar {
+    border-radius: 20px 20px 0 0;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+   }
+   
+   .ql-toolbar button,
+   .ql-toolbar .ql-picker-label,
+   .ql-toolbar .ql-picker-item {
+    color: #333;
+   }
+   
+   .ql-toolbar button:hover,
+   .ql-toolbar .ql-picker-label:hover,
+   .ql-toolbar .ql-picker-item:hover {
+    color: #007bff;
+   }
+   
+   .ql-toolbar button.ql-active,
+   .ql-toolbar .ql-picker-label.ql-active,
+   .ql-toolbar .ql-picker-item.ql-active {
+    color: #007bff;
+   }
+   
