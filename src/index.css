@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Sawarabi+Mincho&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,6 +19,18 @@ body{
 .font-mar{
     font-family: 'Martel Sans'!important;
 }
+
+.pt-serif-regular {
+    font-family: "PT Serif", serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  .pt-serif-bold {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
 
 .scrollable-container::-webkit-scrollbar {
     display: none;
