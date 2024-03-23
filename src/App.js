@@ -3,16 +3,16 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/Home";
 import SignInPage from "./Pages/SignIn";
 import SignUpPage from "./Pages/SignUp";
-
 import Dashboard from "./Pages/Dashboard";
-
 import Error404Page from "./Pages/Errors/404";
 import Profile from "./Pages/Profile";
 import CourseManage from "./Pages/CourseManage";
 import CoursePage from "./Components/Course/CoursePage";
 import TeacherManage from "./Pages/TeacherManage";
+import AboutPage from "./Pages/About";
 import Paper from "./Pages/Paper";
 import PaperMaking from "./Pages/PaperMaking";
+
 
 function App() {
   return (
@@ -27,6 +27,8 @@ function App() {
         <Route path="/admin/courses/:id" element={<CoursePage />} />
         <Route path="/dashboard/teacher" element={<TeacherManage />} />
         <Route path="/paper" element={<PaperMaking/>}/>
+
+        <Route path="/about" element={<AboutPage/>} />
 
 
 
