@@ -2,8 +2,10 @@ import React, { useRef, useState } from 'react'
 import Paper from './Paper'
 import jsPDF from 'jspdf';
 import generatePDF, { Resolution, Margin, Options } from "react-to-pdf";
-import { Button } from '@material-tailwind/react';
+import { Button, Typography } from '@material-tailwind/react';
 import TextEditor from '../Components/TextEditor';
+import { ModalSelectQuestion } from '../Components/Paper/ModalSelectQuestion';
+import DraggableList from '../Components/Paper/Draggable';
 
 
 
@@ -48,24 +50,44 @@ const options = {
   
 export default function PaperMaking() {
 
+  const items = [
+    { id: '1', content: 'Question 1' },
+    { id: '2', content: 'Question 2' },
+    { id: '3', content: 'Question 3' },
+  ]
   
 const getTargetElement = () => document.getElementById("container");
 
 const downloadPdf = () => generatePDF(getTargetElement, options);
 let [data,setData]=useState("zaryab")
   return (
-    <div className='min-h-screen'>
+    <div className='max-h-screen'>
       <div className=' flex flex-wrap justify-center'>
-        <div className='md:w-1/2 w-full flex flex-col items-center'>
+        <div className='md:w-1/2 w-full flex flex-col items-center max-h-screen scrollable-container overflow-y-auto'>
            
             {/* <button className="button" onClick={handleGeneratePdf}>
 				Generate PDF
 			</button> */}
             {/* <Button onClick={downloadPdf}>Download PDF</Button> */}
-            <TextEditor setData={setData}/>
+            <div className='my-2 w-11/12 mt-7'><Typography variant='h2' className='font-mar opacity-75'>Paper Editor</Typography></div>
+           <div className='w-11/12 my-2'>
+            <ModalSelectQuestion />
+            </div>
+            <div className='w-11/12 my-2'> 
+              <Typography variant='h4' className='font-mar opacity-70 mb-2'>
+                Selected Question
+                </Typography>           
+              <DraggableList items={items} />
+            </div>
+            <div className='w-11/12 my-2'>
+              <Button variant='gradient' color='blue'  fullWidth>
+                Add Custom Question
+              </Button>
+            </div>
 
+            <TextEditor setData={setData}/>
         </div>
-        <div className='md:w-1/2 w-full scrollable-container'  >
+        <div className='md:w-1/2 w-full scrollable-container overflow-y-auto'  >
             <div className='w-full' id="container">
             <Paper  htmlContent={data} data={data}/>
             </div>

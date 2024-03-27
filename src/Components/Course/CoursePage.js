@@ -5,8 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen, faPencilSquare, faTrash } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../Logo'
 import SubjectsCard from './SubjectsCard'
+import { useParams } from 'react-router-dom'
 
 export default function CoursePage() {
+    const {id}=useParams()
 
     const [viewForm, setViewForm] = useState(true)
 
@@ -18,7 +20,7 @@ export default function CoursePage() {
                         variant="h4"
                         className="self-center sm:self-start font-mar font-bold mb-10 text-3xl text-[#323226d7] "
                     >
-                        Manage Course Name
+                        Manage Course Name {id}
                     </Typography>
 
                     {(viewForm) ? (
